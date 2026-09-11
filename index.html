@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramedi Pharma | Built on Trust. Driven by Science.</title>
+<meta name="description" content="Ramedi Pharmaceuticals Pvt. Ltd. — Neurology, Psychiatry & specialty healthcare products. Trusted by chemists, stockists and healthcare professionals across India.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 900:'#052A44', 800:'#073856', 700:'#0A4A6E' },
+          brand: { 50:'#EDFAFF', 100:'#D7F2FC', 200:'#AEE6F7', 300:'#78D4EE', 400:'#3FBBE0', 500:'#159FD6', 600:'#0C82B4', 700:'#0A6690', 800:'#0B4E70', 900:'#0B3A55' },
+          ink: '#0B2436',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Manrope', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background:#FBFEFF; color:#0B2436; overflow-x:hidden; }
+  h1,h2,h3, .font-display { font-family: 'Fraunces', serif; }
+
+  .grad-btn {
+    background-image: linear-gradient(135deg, #3FBBE0 0%, #0C82B4 55%, #0A4A6E 100%);
+    box-shadow: 0 10px 25px -8px rgba(10,74,110,0.55);
+  }
+  .grad-btn:hover { box-shadow: 0 14px 30px -6px rgba(10,74,110,0.65); transform: translateY(-1px); }
+
+  .grad-btn-outline {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.55);
+  }
+
+  .hero-bg {
+    background: radial-gradient(120% 140% at 15% 0%, #0A4A6E 0%, #073856 45%, #052A44 100%);
+  }
+
+  .card-grad {
+    background-image: linear-gradient(160deg, #FFFFFF 0%, #F1FBFF 55%, #E4F6FD 100%);
+    border: 1px solid #DDF1FA;
+  }
+
+  .chip {
+    background-image: linear-gradient(135deg, #EDFAFF, #D7F2FC);
+    border: 1px solid #BFE8F8;
+  }
+
+  .section-eyebrow-dot { width:6px; height:6px; border-radius:999px; background: linear-gradient(135deg,#3FBBE0,#0A4A6E); }
+
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: #EEFAFF; }
+  ::-webkit-scrollbar-thumb { background: #78D4EE; border-radius: 10px; }
+
+  .med-desc { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+  .med-desc.open { max-height: 1400px; transition: max-height 0.6s ease; }
+
+  .rotate-open { transform: rotate(45deg); }
+
+  #mobileMenu { transition: max-height 0.35s ease, opacity 0.3s ease; }
+
+  .navlink { position: relative; }
+  .navlink::after {
+    content:''; position:absolute; left:0; bottom:-4px; width:0%; height:2px;
+    background: linear-gradient(90deg,#3FBBE0,#0A4A6E); transition: width .25s ease;
+  }
+  .navlink:hover::after { width:100%; }
+
+  .text-balance { text-wrap: balance; }
+
+  /* ---------- Hero visual animations ---------- */
+  @keyframes heroOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes heroFloatMain { 0%,100% { transform: rotate(-3deg) translateY(0px); } 50% { transform: rotate(-3deg) translateY(-14px); } }
+  @keyframes heroFloatBadge { 0%,100% { transform: rotate(3deg) translateY(0px); } 50% { transform: rotate(3deg) translateY(-11px); } }
+  @keyframes heroFloatStat { 0%,100% { transform: rotate(2deg) translateY(0px); } 50% { transform: rotate(2deg) translateY(-9px); } }
+  @keyframes heroIconPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(63,187,224,0.55); } 50% { box-shadow: 0 0 0 12px rgba(63,187,224,0); } }
+  @keyframes heroDotPulse { 0%,100% { opacity:.5; transform: scale(1); } 50% { opacity:1; transform: scale(1.6); } }
+  @keyframes heroShimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+  .hero-orbit { animation: heroOrbit 26s linear infinite; transform-origin: 50% 50%; }
+  .hero-card-main { animation: heroFloatMain 5.5s ease-in-out infinite; }
+  .hero-card-badge { animation: heroFloatBadge 4.8s ease-in-out infinite; animation-delay: .3s; }
+  .hero-card-stat { animation: heroFloatStat 5.2s ease-in-out infinite; animation-delay: .6s; }
+  .hero-icon-pulse { animation: heroIconPulse 2.6s ease-in-out infinite; }
+  .hero-orbit-dot { animation: heroDotPulse 2.2s ease-in-out infinite; }
+  .hero-sheen {
+    background-image: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.16) 40%, transparent 60%);
+    background-size: 200% 100%;
+    animation: heroShimmer 3.5s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-orbit, .hero-card-main, .hero-card-badge,
+    .hero-card-stat, .hero-icon-pulse, .hero-orbit-dot, .hero-sheen { animation: none !important; }
+  }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur border-b border-brand-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="flex items-center justify-between h-16 sm:h-[72px]">
+      <a href="#home" class="flex items-center gap-2 shrink-0">
+        <img src="/images/ramedi_pharma_logo.jpeg" alt="Ramedi Pharma logo" class="h-9 sm:h-10 w-auto object-contain mix-blend-multiply">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-navy-900">
+        <a href="#home" class="navlink">Home</a>
+        <a href="#about" class="navlink">About</a>
+        <a href="#values" class="navlink">Values</a>
+        <a href="#products" class="navlink">Products</a>
+        <a href="#focus" class="navlink">Therapeutic Focus</a>
+        <a href="#network" class="navlink">Distributor Network</a>
+        <a href="#contact" class="navlink">Contact</a>
+      </nav>
+
+      <a href="tel:+918080788291" class="hidden lg:inline-flex grad-btn text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 items-center gap-2">
+        Get In Touch
+      </a>
+
+      <button id="menuBtn" aria-label="Toggle menu" class="lg:hidden relative w-9 h-9 flex flex-col items-center justify-center gap-[5px]">
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden opacity-0">
+      <div class="flex flex-col gap-1 pb-5 pt-1 text-navy-900 font-semibold text-[15px]">
+        <a href="#home" class="mobile-link py-2.5 border-b border-brand-100">Home</a>
+        <a href="#about" class="mobile-link py-2.5 border-b border-brand-100">About</a>
+        <a href="#values" class="mobile-link py-2.5 border-b border-brand-100">Values</a>
+        <a href="#products" class="mobile-link py-2.5 border-b border-brand-100">Products</a>
+        <a href="#focus" class="mobile-link py-2.5 border-b border-brand-100">Therapeutic Focus</a>
+        <a href="#network" class="mobile-link py-2.5 border-b border-brand-100">Distributor Network</a>
+        <a href="#contact" class="mobile-link py-2.5 border-b border-brand-100">Contact</a>
+        <a href="tel:+918080788291" class="grad-btn text-white text-center text-sm font-bold px-5 py-3 rounded-full mt-4">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero-bg relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 sm:px-6 lg:px-10 overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-brand-400/20 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brand-300/10 blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto relative grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 chip rounded-full px-4 py-1.5 mb-6">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-800 text-xs sm:text-sm font-bold">Founded 31st July 2023 · Mumbai, India</span>
+      </div>
+
+      <h1 class="font-display text-balance text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] mb-6">
+        Built on Trust.<br> Driven by <span class="text-brand-300">Science.</span>
+      </h1>
+
+      <p class="text-white/80 text-base sm:text-lg leading-relaxed mb-9 max-w-xl">
+        Ramedi Pharmaceuticals Pvt. Ltd. is an emerging pharmaceutical company delivering reliable, science-driven healthcare solutions across Neurology, Psychiatry and specialty segments — for healthcare professionals, patients and partners.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#products" class="grad-btn text-white text-sm sm:text-base font-bold px-7 py-3.5 rounded-full transition-all duration-300">Explore Our Products</a>
+        <a href="tel:+918080788291" class="grad-btn-outline text-white text-sm sm:text-base font-bold px-7 py-3.5 rounded-full hover:bg-white/10 transition-all duration-300">Call +91 80807 88291</a>
+      </div>
+    </div>
+
+    <!-- Hero visual composition -->
+    <div class="relative w-full max-w-[320px] sm:max-w-[420px] lg:max-w-none mx-auto lg:mx-0 h-[300px] sm:h-[360px] lg:h-[420px] mt-4 lg:mt-0" data-aos="fade-left" data-aos-delay="150">
+      <!-- decorative dotted ring (slow orbit) -->
+      <svg class="absolute -top-2 right-0 sm:-top-4 sm:right-2 lg:-top-6 lg:right-4 w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 text-brand-300/25 hero-orbit" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="98" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 8"/>
+        <circle cx="100" cy="2" r="3.2" fill="#7FD8F5" class="hero-orbit-dot"/>
+      </svg>
+
+      <!-- main glass card -->
+      <div class="hero-card-main absolute top-2 left-0 sm:top-4 sm:left-2 w-[76%] sm:w-[260px] lg:w-[320px] rounded-2xl sm:rounded-3xl bg-white/8 border border-white/15 backdrop-blur-md p-4 sm:p-6 lg:p-7 shadow-2xl overflow-hidden">
+        <div class="absolute inset-0 hero-sheen pointer-events-none"></div>
+        <div class="relative">
+          <div class="hero-icon-pulse w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-lg sm:rounded-xl grad-btn flex items-center justify-center mb-3 sm:mb-4 lg:mb-5">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v4a1 1 0 001 1h4a1 1 0 001-1V3M6 21h12a2 2 0 002-2V9.4a2 2 0 00-.59-1.42l-3.4-3.4A2 2 0 0014.6 4H9.4a2 2 0 00-1.4.58l-3.4 3.4A2 2 0 004 9.4V19a2 2 0 002 2z"/></svg>
+          </div>
+          <p class="font-display text-white text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 leading-snug">Formulated for Trust</p>
+          <ul class="space-y-2 sm:space-y-2.5 lg:space-y-3">
+            <li class="flex items-center gap-2 sm:gap-3">
+              <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-brand-300 shrink-0"></span>
+              <span class="text-white/70 text-[11px] sm:text-xs lg:text-sm">Neurology &amp; Psychiatry focus</span>
+            </li>
+            <li class="flex items-center gap-2 sm:gap-3">
+              <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-brand-300 shrink-0"></span>
+              <span class="text-white/70 text-[11px] sm:text-xs lg:text-sm">Quality-driven manufacturing</span>
+            </li>
+            <li class="flex items-center gap-2 sm:gap-3">
+              <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-brand-300 shrink-0"></span>
+              <span class="text-white/70 text-[11px] sm:text-xs lg:text-sm">Pan-India distributor network</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- floating Rx badge card -->
+      <div class="hero-card-badge absolute bottom-2 right-0 sm:bottom-4 sm:right-2 lg:bottom-6 lg:right-2 w-36 sm:w-44 lg:w-52 rounded-xl sm:rounded-2xl bg-white p-3 sm:p-4 lg:p-5 shadow-2xl" data-aos="fade-up" data-aos-delay="350">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full chip flex items-center justify-center shrink-0">
+            <span class="font-display text-brand-700 font-bold text-xs sm:text-sm">Rx</span>
+          </div>
+          <div>
+            <p class="text-navy-900 font-bold text-xs sm:text-sm leading-tight">Prescription Grade</p>
+            <p class="text-slate-500 text-[10px] sm:text-xs mt-0.5">Quality &amp; consistency</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- small stat chip -->
+      <div class="hero-card-stat absolute top-24 sm:top-32 lg:top-40 -right-1 sm:-right-2 rounded-xl sm:rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 lg:px-5 lg:py-3 shadow-xl" data-aos="fade-up" data-aos-delay="450">
+        <p class="font-display text-white text-base sm:text-lg lg:text-xl font-semibold">13+</p>
+        <p class="text-white/60 text-[9px] sm:text-[10px] lg:text-[11px]">Products</p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-10 max-w-3xl" data-aos="fade-up" data-aos-delay="150">
+      <div class="border-l-2 border-brand-400/50 pl-4">
+        <p class="font-display text-2xl sm:text-3xl font-semibold text-white">2023</p>
+        <p class="text-white/60 text-xs sm:text-sm mt-1">Founded</p>
+      </div>
+      <div class="border-l-2 border-brand-400/50 pl-4">
+        <p class="font-display text-2xl sm:text-3xl font-semibold text-white">13+</p>
+        <p class="text-white/60 text-xs sm:text-sm mt-1">Products in Portfolio</p>
+      </div>
+      <div class="border-l-2 border-brand-400/50 pl-4">
+        <p class="font-display text-2xl sm:text-3xl font-semibold text-white">7</p>
+        <p class="text-white/60 text-xs sm:text-sm mt-1">Therapeutic Areas</p>
+      </div>
+      <div class="border-l-2 border-brand-400/50 pl-4">
+        <p class="font-display text-2xl sm:text-3xl font-semibold text-white">8+</p>
+        <p class="text-white/60 text-xs sm:text-sm mt-1">Distribution Partners</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-10 bg-white">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-start">
+    <div data-aos="fade-right">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">Who We Are</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 leading-tight mb-6 text-balance">
+        A focused healthcare organization, built with a purpose
+      </h2>
+      <p class="text-slate-600 leading-relaxed mb-5">
+        Ramedi Pharmaceuticals Pvt. Ltd. is an emerging pharmaceutical company founded on 31st July 2023, with a vision to contribute to better healthcare through quality, science and trust. We are building expertise in Neurology, Psychiatry and other specialty healthcare segments, while continuously exploring opportunities to address evolving healthcare needs.
+      </p>
+      <p class="text-slate-600 leading-relaxed mb-8">
+        At Ramedi Pharma, we believe every healthcare product carries a responsibility — not only to meet quality standards, but to create confidence among healthcare professionals and value for patients. Our approach is built around quality products, ethical business practices, professional partnerships and continuous innovation.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="card-grad rounded-2xl p-5">
+          <p class="text-navy-900 font-bold mb-1">Suraj Shukla</p>
+          <p class="text-brand-700 text-sm font-semibold">Founder</p>
+        </div>
+        <div class="card-grad rounded-2xl p-5">
+          <p class="text-navy-900 font-bold mb-1">Priya Suraj Shukla</p>
+          <p class="text-brand-700 text-sm font-semibold">Director, Marketing Operations</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6" data-aos="fade-left">
+      <div class="card-grad rounded-3xl p-7 sm:p-8">
+        <h3 class="font-display text-xl font-semibold text-navy-900 mb-3">Our Story</h3>
+        <p class="text-slate-600 leading-relaxed text-[15px]">
+          Built with a purpose, growing with trust. Our journey started with a focused portfolio and a commitment to building strong relationships with doctors, healthcare professionals, distributors and business partners. Step by step, we are expanding our capabilities, strengthening our team and developing our presence across markets.
+        </p>
+      </div>
+      <div class="card-grad rounded-3xl p-7 sm:p-8">
+        <h3 class="font-display text-xl font-semibold text-navy-900 mb-3">Looking Ahead</h3>
+        <p class="text-slate-600 leading-relaxed text-[15px]">
+          From a vision started in 2023, Ramedi Pharma is building its future one step at a time. We are not only building a business — we are building a healthcare brand that people can trust, with an ambition to grow across India and eventually international markets.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION & MISSION ============ -->
+<section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-10 bg-brand-50">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+    <div class="bg-navy-900 rounded-3xl p-8 sm:p-10 relative overflow-hidden" data-aos="fade-up">
+      <div class="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-brand-400/10 blur-2xl"></div>
+      <p class="text-brand-300 text-xs font-bold tracking-wide mb-3">VISION</p>
+      <h3 class="font-display text-2xl sm:text-3xl font-semibold text-white leading-snug mb-4 text-balance">
+        To build trust. Improve healthcare. Create a better future.
+      </h3>
+      <p class="text-white/70 leading-relaxed text-[15px]">
+        To build Ramedi Pharma into a trusted healthcare company recognized for quality, innovation and commitment to better patient outcomes across India and beyond.
+      </p>
+    </div>
+
+    <div class="bg-gradient-to-br from-brand-500 to-brand-700 rounded-3xl p-8 sm:p-10 relative overflow-hidden" data-aos="fade-up" data-aos-delay="120">
+      <div class="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-white/10 blur-2xl"></div>
+      <p class="text-white/80 text-xs font-bold tracking-wide mb-3">MISSION</p>
+      <h3 class="font-display text-2xl sm:text-3xl font-semibold text-white leading-snug mb-4 text-balance">
+        Science-driven solutions. Long-term value.
+      </h3>
+      <p class="text-white/85 leading-relaxed text-[15px]">
+        To develop and deliver reliable, science-driven healthcare solutions that support healthcare professionals, benefit patients and create long-term value for our partners and society.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORE VALUES ============ -->
+<section id="values" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-10 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">Our Core Values</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 text-balance">
+        The principles behind every product we deliver
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- value cards -->
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">01</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Trust</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">We believe trust is the foundation of every lasting relationship — with doctors, patients, employees and partners.</p>
+      </div>
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">02</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Quality</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Quality is at the heart of everything we do, from product selection and development to our everyday operations.</p>
+      </div>
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">03</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Integrity</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">We believe in conducting our business with transparency, responsibility and ethical standards.</p>
+      </div>
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">04</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Innovation</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">We continuously look for better ideas, better solutions and new opportunities to address healthcare needs.</p>
+      </div>
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">05</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Patient Focus</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Behind every healthcare decision is a patient. We keep their needs and well-being at the centre of our purpose.</p>
+      </div>
+      <div class="card-grad rounded-2xl p-7 hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="w-11 h-11 rounded-xl grad-btn flex items-center justify-center mb-5 text-white font-display font-semibold">06</div>
+        <h3 class="font-display text-lg font-semibold text-navy-900 mb-2">Excellence</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">We believe in continuous learning, improvement and raising our standards with every step forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY RAMEDI ============ -->
+<section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 bg-navy-900 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-80 h-80 rounded-full bg-brand-500/10 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto relative">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-300"></span>
+        <span class="text-brand-300 text-xs sm:text-sm font-bold uppercase tracking-wide">Why Ramedi Pharma</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white text-balance">Focused on healthcare. Committed to trust.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur" data-aos="fade-up" data-aos-delay="0">
+        <h3 class="text-white font-display font-semibold text-lg mb-2">Focused Expertise</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Focused therapeutic areas and a deep understanding of healthcare professionals' needs.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur" data-aos="fade-up" data-aos-delay="70">
+        <h3 class="text-white font-display font-semibold text-lg mb-2">Quality-Driven</h3>
+        <p class="text-white/60 text-sm leading-relaxed">A strong commitment to quality, consistency and responsible pharmaceutical practices.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur" data-aos="fade-up" data-aos-delay="140">
+        <h3 class="text-white font-display font-semibold text-lg mb-2">Professional Partnerships</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Long-term relationships with chemists, stockists and doctors — not short-term transactions.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur" data-aos="fade-up" data-aos-delay="210">
+        <h3 class="text-white font-display font-semibold text-lg mb-2">Continuous Growth</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Continuously expanding our portfolio, capabilities and reach to serve evolving needs.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur" data-aos="fade-up" data-aos-delay="280">
+        <h3 class="text-white font-display font-semibold text-lg mb-2">Patient-Centric</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Our ultimate purpose is to contribute to better healthcare and improved quality of life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THERAPEUTIC FOCUS ============ -->
+<section id="focus" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 bg-white">
+  <div class="max-w-7xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 mb-5 justify-center" data-aos="fade-up">
+      <span class="section-eyebrow-dot"></span>
+      <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">Our Key Therapeutic Focus</span>
+    </div>
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 mb-10 text-balance" data-aos="fade-up">
+      Specialized across critical healthcare segments
+    </h2>
+
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="100">
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Neurology</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Neurosurgery</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Spine Surgery</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Psychiatry</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Orthopaedics</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">Gastroenterology</span>
+      <span class="chip text-navy-800 font-semibold text-sm sm:text-base px-5 py-3 rounded-full">General Medicine / Physicians</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-10 bg-brand-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">Our Product Portfolio</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 text-balance">
+        Quality formulations, prescribed with confidence
+      </h2>
+      <p class="text-slate-600 mt-4 leading-relaxed">Tap any product card to view full composition, uses, dosage and precautions.</p>
+    </div>
+
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/benkomedi.jpeg" alt="Benkomedi CD3 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Benkomedi CD3</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 227</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Nutritional Supplement</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Calcium Carbonate + Vitamin D3 + Methylcobalamin + L-Methylfolate + Pyridoxal-5-Phosphate</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Supports bone health and corrects nutritional deficiencies with calcium, vitamin D3 and B-vitamins.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Key Ingredients</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Calcium Carbonate (Elemental Calcium 500 mg) builds and maintains strong bones and teeth. Vitamin D3 (2000 IU) enhances calcium and phosphorus absorption. Methylcobalamin (1500 mcg) supports nerve function and red blood cell production. L-Methylfolate Calcium (1 mg) aids new blood cell formation. Pyridoxal-5-Phosphate (20 mg) acts as a coenzyme for metabolic and bone functions.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Uses &amp; Benefits</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Manages and prevents osteoporosis, osteomalacia and low calcium levels. Recommended during pregnancy, breastfeeding or post-surgical recovery. Helps correct vitamin B12 and folate gaps, reducing nerve pain and fatigue.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Dosage</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take orally, preferably after a meal to maximize absorption and lower the chance of stomach upset. Follow your doctor&#x27;s exact instructions regarding dose and duration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/magrache.jpeg" alt="Magrache Q10 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Magrache Q10</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 269</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Nutraceutical Supplement</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Magnesium + Coenzyme Q10 + Riboflavin</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Supports cellular energy, bone structure and helps manage migraine headaches.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Key Ingredients</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Each tablet contains Mineral (Magnesium Oxide, equivalent to Elemental Magnesium 340 mg), Coenzyme Q10 150 mg and Vitamin (Riboflavin) 1.6 mg, along with standard anticaking, dispersing, stabilizing and binding agents.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Key Benefits</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Supports general health parameters and overall well-being. Helps maintain normal bone structure and healthy muscle function. Aids cellular energy production and provides antioxidant support. Supports metabolic health and energy conversion within cells.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Effects of Deficiency</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Lack of magnesium can cause altered bone health, muscle weakness, general fatigue and lowered energy levels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/gabbion_100.jpeg" alt="Gabbion NT 100 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Gabbion NT 100</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 154</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Gabapentin + Nortriptyline</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Combination medicine for neuropathic (nerve) pain, reducing abnormal nerve activity.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Works by reducing abnormal nerve activity and blocking the transmission of pain signals, helping relieve neuropathic pain caused by nerve damage or injury.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Constipation, weight gain, dry mouth, difficulty in urination, nausea, dizziness or drowsiness. Consult your doctor if side effects persist.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Warnings</p>
+              <p class="text-slate-600 text-sm leading-relaxed">May be taken with or without food, at the same time every day. Avoid driving or alcohol if you feel dizzy or drowsy. Use with caution in liver/kidney problems. Not recommended for children below 18 unless prescribed. For Healthcare Professional Use only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/gabbion_400.jpeg" alt="Gabbion NT 400 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Gabbion NT 400</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 249</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Gabapentin 400 mg + Nortriptyline 10 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Higher-strength combination for neuropathic pain management under medical supervision.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Reduces abnormal nerve activity and blocks transmission of pain signals, helping relieve neuropathic pain caused by nerve damage.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Constipation, weight gain, dry mouth, difficulty in urination, nausea, dizziness or drowsiness.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Warnings</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take at the same time daily, with or without food. Avoid alcohol and driving if drowsy. Consult your doctor if you have heart, liver or kidney problems. Not for children below 18 unless prescribed. Prescription Medicine — for Healthcare Professional Use.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/headmedi_250.jpeg" alt="Headmedi-N 250 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Headmedi-N 250</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 104</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Naproxen 250 mg + Domperidone 10 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Treats migraine headaches by relieving pain and associated nausea.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Blocks chemical substances in the body that cause pain, relieving migraine headache, and blocks a brain chemical that causes migraine-associated nausea.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Headache, stomach pain, dry mouth, diarrhoea. Consult your doctor if symptoms persist or worsen.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Warnings</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take with food or milk to prevent stomach upset. Avoid alcohol. Inform your doctor of heart, liver, kidney, clotting or bleeding disorders. For Healthcare Professional Use / Prescription Medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/headmedi_500.jpeg" alt="Headmedi-N 500 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Headmedi-N 500</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 149</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Naproxen Sodium 500 mg + Domperidone 10 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Higher-strength migraine relief with pain control and anti-nausea action.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Blocks chemical substances that cause pain, relieving migraine headache, and blocks the brain chemical responsible for migraine-related nausea.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Headache, stomach pain, dry mouth, diarrhoea. Consult your doctor if these persist or worsen.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Warnings</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take with food or milk. Avoid alcohol. Long-term use may require monitoring of kidney/liver function. For Healthcare Professional Use / Prescription Medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/paxed_cr.jpeg" alt="Paxed CR 12.5 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Paxed CR 12.5</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 179</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Paroxetine Controlled-Release 12.5 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Antidepressant for depression, OCD, panic disorder, PTSD and anxiety disorders.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Helps restore the balance of brain chemicals associated with mood, anxiety and emotional well-being.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Confusion, headache, nausea, dizziness. Consult your doctor if these persist or worsen.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Important Information</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Do not stop suddenly — may cause withdrawal symptoms. Best taken in the morning, with food. Full effect may take several weeks. Not recommended for children below 18. For Healthcare Professional Use / Prescription Medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/paxed_25.jpeg" alt="Paxed CR 25 pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Paxed CR 25</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 249</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Paroxetine Controlled-Release 25 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Higher-strength antidepressant for depression, OCD, panic and anxiety disorders.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Helps restore the balance of brain chemicals associated with mood, anxiety and emotional well-being.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Confusion, headache, nausea, dizziness.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Important Information</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Do not stop suddenly, as it may cause withdrawal symptoms such as mood changes and sleep disturbances. Take in the morning with food. Not recommended for children below 18. For Healthcare Professional Use / Prescription Medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/vitamin_d3.jpeg" alt="Riseone-D3 60K pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Riseone-D3 60K</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 320</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Vitamin Supplement</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Cholecalciferol (Vitamin D3) 60,000 IU — Mango Flavour Oral Solution</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Sugar-free, high-dose Vitamin D3 oral solution supporting bones, immunity and healthy growth.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Uses</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Prevention and treatment of vitamin D deficiency, supporting healthy bones and teeth, calcium and phosphorus absorption, normal muscle function.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Benefits</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Supports vitamin D levels, bone health, muscle function and calcium absorption in a convenient sugar-free, mango-flavoured, ready-to-drink solution.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Precautions</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take only as recommended by your doctor, preferably with a meal containing some dietary fat. Consult your doctor if you have high calcium levels, kidney or liver disease. Keep out of reach of children.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/panprime.jpeg" alt="Panprime DSR pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Panprime DSR</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 147</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Pantoprazole 40 mg + Domperidone 30 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Manages acidity, heartburn, acid reflux and associated gastric discomfort.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Pantoprazole blocks the proton pumps responsible for stomach acid production. Domperidone enhances gastrointestinal motility, helping with nausea, vomiting and bloating.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Headache, diarrhoea or constipation, stomach discomfort, dry mouth, dizziness.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Directions &amp; Warnings</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Take before food, at the same time daily; swallow whole with water. Inform your doctor about liver/kidney issues or heart rhythm problems. For Prescription Use Only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="80">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/vivinerv.jpeg" alt="Vivinerv pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Vivinerv</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 269</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Nutritional Supplement</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Methylcobalamin + Alpha Lipoic Acid + Benfotiamine + Chromium Picolinate + Folic Acid + Myo-Inositol + Selenium</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Comprehensive nutritional support for nerve health, energy metabolism and antioxidant protection.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Key Ingredients</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Methylcobalamin (1500 mcg) supports nerve function and red blood cell formation. Alpha Lipoic Acid (100 mg) is a potent antioxidant. Benfotiamine (150 mg) supports carbohydrate metabolism. Chromium Picolinate (200 mcg) supports glucose metabolism. Folic Acid (1.5 mg) supports DNA synthesis. Myo-Inositol (100 mg) supports cellular signalling. Selenium (55 mcg) provides antioxidant and immune support.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Key Benefits</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Supports nerve health, provides comprehensive nutritional support, aids energy metabolism, antioxidant protection, metabolic health and red blood cell formation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="160">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/acezero.jpeg" alt="Acezero-P pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Acezero-P</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 95</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Aceclofenac + Paracetamol</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Short-term relief for painful inflammatory musculoskeletal or dental conditions.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Uses</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Inflammatory joint pain such as osteoarthritis, musculoskeletal pain including back and muscle pain, and short-term relief from dental or post-operative pain, when prescribed.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Nausea, vomiting, diarrhoea, stomach upset, reduced appetite and dizziness — usually mild and manageable by taking the tablet with food.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Important Information</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Not intended for routine everyday pain or uncomplicated fever. Tell your doctor about stomach, kidney, liver or heart conditions before use.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-card card-grad rounded-2xl overflow-hidden hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden bg-white">
+          <img src="/images/medicitalo.jpeg" alt="Medicitalo Forte pack shot" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <h3 class="font-display text-lg font-semibold text-navy-900">Medicitalo Forte</h3>
+            <span class="shrink-0 text-brand-800 font-bold text-sm bg-white border border-brand-200 rounded-full px-3 py-1">MRP 149</span>
+          </div>
+          <span class="inline-block chip text-brand-800 text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full mb-3">Prescription Medicine</span>
+          <p class="text-slate-500 text-xs font-semibold mb-2">Escitalopram 10 mg + Clonazepam 0.5 mg</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Combination antidepressant and anxiolytic for anxiety disorders with depressive symptoms.</p>
+
+          <button class="med-toggle flex items-center gap-2 text-brand-700 font-bold text-sm">
+            <span class="med-toggle-label">Full details</span>
+            <svg class="med-icon w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+
+          <div class="med-desc mt-4 space-y-3 border-t border-brand-100 pt-4">
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">How It Works</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Escitalopram increases availability of serotonin to improve mood and reduce anxiety/depression. Clonazepam enhances calming brain chemicals to reduce anxiety.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Common Side Effects</p>
+              <p class="text-slate-600 text-sm leading-relaxed">Drowsiness, dizziness, nausea, dry mouth, headache, fatigue, sleep changes, increased sweating.</p>
+            </div>
+            <div>
+              <p class="text-navy-800 font-bold text-xs uppercase tracking-wide mb-1">Important Precautions</p>
+              <p class="text-slate-600 text-sm leading-relaxed">May cause drowsiness — avoid driving until effects are known. Avoid alcohol. Clonazepam may cause dependence with prolonged use; do not stop suddenly. Prescription Medicine — use only as directed by the physician.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISTRIBUTOR NETWORK ============ -->
+<section id="network" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-10 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-12" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">For Chemists &amp; Stockists</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 mb-4 text-balance">Our authorized distribution network</h2>
+      <p class="text-slate-600 leading-relaxed">Contact the partner below for your area to place orders. If your district is not listed, reach out to us directly and we'll connect you.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Siddharth Pharma</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Virar West</p>
+        <p class="text-slate-600 text-sm">0250 251 1933 / 93207 18821</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">S Parikh</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Dahisar East</p>
+        <p class="text-slate-600 text-sm">2242 460100</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Seven Hills Distributors</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Goregaon East</p>
+        <p class="text-slate-600 text-sm">70212 11099</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Chintan Agencies</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Borivali East</p>
+        <p class="text-slate-600 text-sm">86551 33778 / 86551 88558</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Prabhat Medico</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Mumbai</p>
+        <p class="text-slate-600 text-sm">97692 07068</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Shree J Ramesh &amp; Co</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Chembur</p>
+        <p class="text-slate-600 text-sm">+91 90824 30178</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Shree Nidhi Pharma</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Hospital Supply Service, Bhandup</p>
+        <p class="text-slate-600 text-sm">+91 82917 13767</p>
+      </div>
+      <div class="card-grad rounded-2xl p-6">
+        <p class="font-display font-semibold text-navy-900 mb-1">Karachi Medical Agency</p>
+        <p class="text-brand-700 text-xs font-semibold mb-3">Kalyan</p>
+        <p class="text-slate-600 text-sm">82911 23455</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT US / SHOP ============ -->
+<section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 bg-brand-50">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+    <div class="rounded-3xl overflow-hidden shadow-xl" data-aos="fade-right">
+      <img src="/images/ramedi_shop.jpeg" alt="Ramedi Pharmaceuticals wholesale distributor drug store" class="w-full h-full object-cover">
+    </div>
+    <div data-aos="fade-left">
+      <div class="inline-flex items-center gap-2 mb-5">
+        <span class="section-eyebrow-dot"></span>
+        <span class="text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wide">Visit Our Store</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-navy-900 mb-5 text-balance">Wholesale Distributor Drug Store</h2>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Ramedi Pharmaceuticals Private Limited, Shop No. 3, Abhay Apartment CHS Ltd., Narayan Nagar Road, Bhayander West, Thane – 401101.
+      </p>
+      <div class="space-y-3 mb-8">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+          <span class="text-navy-800 text-sm font-semibold">GST: 27AAMCR8842G1ZV</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+          <span class="text-navy-800 text-sm font-semibold">Open for chemists, stockists &amp; institutional buyers</span>
+        </div>
+      </div>
+      <a href="tel:+918080788291" class="grad-btn inline-block text-white text-sm sm:text-base font-bold px-7 py-3.5 rounded-full transition-all duration-300">Call +91 80807 88291</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+<section id="contact" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-10 hero-bg relative overflow-hidden">
+  <div class="absolute -top-16 left-1/4 w-72 h-72 rounded-full bg-brand-400/15 blur-3xl"></div>
+  <div class="max-w-4xl mx-auto text-center relative" data-aos="zoom-in">
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-5 text-balance">
+      Let's build better healthcare, together
+    </h2>
+    <p class="text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+      Whether you're a chemist, stockist, healthcare professional or a prospective partner — we'd love to hear from you.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="tel:+918080788291" class="grad-btn text-white text-sm sm:text-base font-bold px-8 py-4 rounded-full transition-all duration-300">Call +91 80807 88291</a>
+      <a href="mailto:info@ramedipharma.com" class="grad-btn-outline text-white text-sm sm:text-base font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy-900 pt-16 sm:pt-20 pb-8 px-4 sm:px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <img src="/images/ramedi_pharma_logo.jpeg" alt="Ramedi Pharma" class="h-9 w-auto object-contain mb-4 brightness-0 invert">
+        <p class="text-white/55 text-sm leading-relaxed">Built on Trust. Driven by Science. Inspired by Better Health.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="#about" class="hover:text-brand-300 transition-colors">About Us</a></li>
+          <li><a href="#values" class="hover:text-brand-300 transition-colors">Our Values</a></li>
+          <li><a href="#products" class="hover:text-brand-300 transition-colors">Products</a></li>
+          <li><a href="#network" class="hover:text-brand-300 transition-colors">Distributor Network</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Therapeutic Areas</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li>Neurology &amp; Neurosurgery</li>
+          <li>Psychiatry</li>
+          <li>Orthopaedics &amp; Spine</li>
+          <li>Gastroenterology</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Get in Touch</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li>Shop No. 3, Abhay Apartment CHS Ltd., Narayan Nagar Road, Bhayander West, Thane – 401101</li>
+          <li><a href="tel:+918080788291" class="hover:text-brand-300 transition-colors font-semibold text-white">+91 80807 88291</a></li>
+          <li>GST: 27AAMCR8842G1ZV</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-white/40 text-xs sm:text-sm text-center sm:text-left">© 2026 Ramedi Pharmaceuticals Pvt. Ltd. All rights reserved.</p>
+      <p class="text-white/40 text-xs sm:text-sm">Prescription products for use only under medical supervision.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
+
+  /* ---------- Header shrink on scroll ---------- */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 12) header.classList.add('shadow-md');
+    else header.classList.remove('shadow-md');
+  });
+
+  /* ---------- Mobile menu ---------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  let menuOpen = false;
+
+  function openMenu() {
+    menuOpen = true;
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    mobileMenu.style.opacity = '1';
+    bar1.style.transform = 'translateY(7px) rotate(45deg)';
+    bar2.style.opacity = '0';
+    bar3.style.transform = 'translateY(-7px) rotate(-45deg)';
+  }
+  function closeMenu() {
+    menuOpen = false;
+    mobileMenu.style.maxHeight = '0px';
+    mobileMenu.style.opacity = '0';
+    bar1.style.transform = 'none';
+    bar2.style.opacity = '1';
+    bar3.style.transform = 'none';
+  }
+
+  menuBtn.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
+  document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+
+  /* Close mobile nav automatically when the user scrolls */
+  let lastScroll = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (menuOpen) closeMenu();
+    lastScroll = window.scrollY;
+  }, { passive: true });
+
+  /* ---------- Product card expand/collapse ---------- */
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.med-toggle');
+    if (!trigger) return;
+    const card = trigger.closest('.med-card');
+    const desc = card.querySelector('.med-desc');
+    const icon = card.querySelector('.med-icon');
+    desc.classList.toggle('open');
+    icon.classList.toggle('rotate-open');
+    trigger.querySelector('.med-toggle-label').textContent = desc.classList.contains('open') ? 'Show less' : 'Full details';
+  });
+</script>
+
+</body>
+</html>
