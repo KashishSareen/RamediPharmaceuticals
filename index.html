@@ -84,6 +84,20 @@
 
   .text-balance { text-wrap: balance; }
 
+  .whatsapp-float {
+    box-shadow: 0 12px 28px -8px rgba(18, 140, 126, 0.55);
+  }
+  .whatsapp-float:hover { transform: translateY(-3px); }
+
+  .med-card { cursor: pointer; }
+  .product-modal[hidden] { display: none; }
+  .product-modal-panel { max-height: min(90vh, 820px); animation: productModalIn .25s ease-out both; }
+  .product-modal-backdrop { animation: productBackdropIn .2s ease-out both; }
+  .product-modal-image { height: 210px; }
+  @keyframes productModalIn { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  @keyframes productBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+  body.modal-open { overflow: hidden; }
+
   /* ---------- Hero visual animations ---------- */
   @keyframes heroOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   @keyframes heroFloatMain { 0%,100% { transform: rotate(-3deg) translateY(0px); } 50% { transform: rotate(-3deg) translateY(-14px); } }
@@ -173,6 +187,10 @@
       <h1 class="font-display text-balance text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] mb-6">
         Built on Trust.<br> Driven by <span class="text-brand-300">Science.</span>
       </h1>
+
+      <p class="text-brand-200 text-lg sm:text-xl font-semibold tracking-wide mb-5">
+        India Comes for Trust <span class="text-white">Ramedi Pharma</span>
+      </p>
 
       <p class="text-white/80 text-base sm:text-lg leading-relaxed mb-9 max-w-xl">
         Ramedi Pharmaceuticals Pvt. Ltd. is an emerging pharmaceutical company delivering reliable, science-driven healthcare solutions across Neurology, Psychiatry and specialty segments — for healthcare professionals, patients and partners.
@@ -277,12 +295,22 @@
 
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="card-grad rounded-2xl p-5">
-          <p class="text-navy-900 font-bold mb-1">Suraj Shukla</p>
-          <p class="text-brand-700 text-sm font-semibold">Founder</p>
+          <div class="flex items-center gap-4">
+            <img src="images/suraj_shukla.jpeg" alt="Suraj Shukla, MD and Founder of Ramedi Pharma" class="w-16 h-16 rounded-xl object-cover object-top shrink-0">
+            <div>
+              <p class="text-navy-900 font-bold mb-1">Suraj Shukla</p>
+              <p class="text-brand-700 text-sm font-semibold">MD &amp; Founder</p>
+            </div>
+          </div>
         </div>
         <div class="card-grad rounded-2xl p-5">
-          <p class="text-navy-900 font-bold mb-1">Priya Suraj Shukla</p>
-          <p class="text-brand-700 text-sm font-semibold">Director, Marketing Operations</p>
+          <div class="flex items-center gap-4">
+            <img src="images/priya_suraj_shukla.jpeg" alt="Priya Suraj Shukla, Director of Ramedi Pharma" class="w-16 h-16 rounded-xl object-cover object-top shrink-0">
+            <div>
+              <p class="text-navy-900 font-bold mb-1">Priya Suraj Shukla</p>
+              <p class="text-brand-700 text-sm font-semibold">Director</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -926,42 +954,60 @@
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Siddharth Pharma</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Virar West</p>
-        <p class="text-slate-600 text-sm">0250 251 1933 / 93207 18821</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:02502511933" class="hover:text-brand-700 transition-colors">0250 251 1933</a> / 
+          <a href="tel:+919320718821" class="hover:text-brand-700 transition-colors">93207 18821</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">S Parikh</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Dahisar East</p>
-        <p class="text-slate-600 text-sm">2242 460100</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:02242460100" class="hover:text-brand-700 transition-colors">2242 460100</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Seven Hills Distributors</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Goregaon East</p>
-        <p class="text-slate-600 text-sm">70212 11099</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+917021211099" class="hover:text-brand-700 transition-colors">70212 11099</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Chintan Agencies</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Borivali East</p>
-        <p class="text-slate-600 text-sm">86551 33778 / 86551 88558</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+918655133778" class="hover:text-brand-700 transition-colors">86551 33778</a> / 
+          <a href="tel:+918655188558" class="hover:text-brand-700 transition-colors">86551 88558</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Prabhat Medico</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Mumbai</p>
-        <p class="text-slate-600 text-sm">97692 07068</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+919769207068" class="hover:text-brand-700 transition-colors">97692 07068</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Shree J Ramesh &amp; Co</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Chembur</p>
-        <p class="text-slate-600 text-sm">+91 90824 30178</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+919082430178" class="hover:text-brand-700 transition-colors">+91 90824 30178</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Shree Nidhi Pharma</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Hospital Supply Service, Bhandup</p>
-        <p class="text-slate-600 text-sm">+91 82917 13767</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+918291713767" class="hover:text-brand-700 transition-colors">+91 82917 13767</a>
+        </p>
       </div>
       <div class="card-grad rounded-2xl p-6">
         <p class="font-display font-semibold text-navy-900 mb-1">Karachi Medical Agency</p>
         <p class="text-brand-700 text-xs font-semibold mb-3">Kalyan</p>
-        <p class="text-slate-600 text-sm">82911 23455</p>
+        <p class="text-slate-600 text-sm">
+          <a href="tel:+918291123455" class="hover:text-brand-700 transition-colors">82911 23455</a>
+        </p>
       </div>
     </div>
   </div>
@@ -1015,6 +1061,31 @@
   </div>
 </section>
 
+<div id="productModal" class="product-modal fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6" hidden>
+  <div class="product-modal-backdrop absolute inset-0 bg-navy-900/75 backdrop-blur-sm" data-modal-close></div>
+  <div class="product-modal-panel relative w-full max-w-2xl overflow-y-auto rounded-3xl bg-white shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="product-modal-image relative overflow-hidden bg-brand-50">
+      <img id="productModalImage" src="" alt="" class="h-full w-full object-contain p-5 sm:p-7">
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-900/30 via-transparent to-transparent pointer-events-none"></div>
+      <button type="button" class="absolute right-4 top-4 rounded-full bg-white/90 p-2 text-navy-900 shadow-lg backdrop-blur transition-transform hover:scale-105" aria-label="Close product details" data-modal-close>
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="flex items-start justify-between gap-4 border-b border-brand-100 bg-white px-6 py-5 sm:px-8">
+      <div>
+        <p id="productModalCategory" class="mb-1 text-brand-700 text-xs font-bold uppercase tracking-wide"></p>
+        <h2 id="productModalTitle" class="font-display text-2xl sm:text-3xl font-semibold text-navy-900"></h2>
+      </div>
+      <span id="productModalPrice" class="shrink-0 rounded-full bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800"></span>
+    </div>
+    <div class="px-6 py-6 sm:px-8 sm:py-8">
+      <p class="mb-2 text-[11px] font-bold uppercase tracking-wide text-brand-700">Composition</p>
+      <p id="productModalComposition" class="mb-7 text-sm font-semibold leading-relaxed text-navy-800"></p>
+      <div id="productModalContent" class="space-y-4"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ FOOTER ============ -->
 <footer class="bg-navy-900 pt-16 sm:pt-20 pb-8 px-4 sm:px-6 lg:px-10">
   <div class="max-w-7xl mx-auto">
@@ -1052,8 +1123,22 @@
         <ul class="space-y-2.5 text-sm text-white/60">
           <li>Shop No. 3, Abhay Apartment CHS Ltd., Narayan Nagar Road, Bhayander West, Thane – 401101</li>
           <li><a href="tel:+918080788291" class="hover:text-brand-300 transition-colors font-semibold text-white">+91 80807 88291</a></li>
-          <li>GST: 27AAMCR8842G1ZV</li>
+          <!-- <li>GST: 27AAMCR8842G1ZV</li> -->
         </ul>
+        
+        <!-- Social Media Icons -->
+        <div class="flex items-center gap-4 mt-5">
+          <a href="https://www.facebook.com/people/Ramedi-Pharmaceuticals-Pvt-Ltd/61594016475431/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-brand-300 transition-colors">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ramedi_pharma/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/60 hover:text-brand-300 transition-colors">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -1063,6 +1148,12 @@
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/918080788291?text=Enquiry%20from%20website" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ramedi Pharma on WhatsApp" title="Chat with Ramedi Pharma on WhatsApp" class="whatsapp-float fixed bottom-[88px] sm:bottom-16 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center transition-transform duration-300">
+  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.86 11.86 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.47-8.43Zm-8.44 18.27h-.01a9.85 9.85 0 0 1-5.02-1.37l-.36-.21-3.73.98 1-3.64-.24-.37a9.84 9.84 0 0 1-1.51-5.24C2.21 6.47 6.64 2.04 12.08 2.04c2.64 0 5.12 1.03 6.98 2.9a9.83 9.83 0 0 1 2.89 7c0 5.44-4.43 9.87-9.87 9.87Zm5.41-7.4c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45s1.05 2.84 1.2 3.04c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+  </svg>
+</a>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -1110,16 +1201,43 @@
     lastScroll = window.scrollY;
   }, { passive: true });
 
-  /* ---------- Product card expand/collapse ---------- */
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.med-toggle');
-    if (!trigger) return;
-    const card = trigger.closest('.med-card');
-    const desc = card.querySelector('.med-desc');
-    const icon = card.querySelector('.med-icon');
-    desc.classList.toggle('open');
-    icon.classList.toggle('rotate-open');
-    trigger.querySelector('.med-toggle-label').textContent = desc.classList.contains('open') ? 'Show less' : 'Full details';
+  /* ---------- Product details modal ---------- */
+  const productModal = document.getElementById('productModal');
+  const productModalTitle = document.getElementById('productModalTitle');
+  const productModalCategory = document.getElementById('productModalCategory');
+  const productModalImage = document.getElementById('productModalImage');
+  const productModalPrice = document.getElementById('productModalPrice');
+  const productModalComposition = document.getElementById('productModalComposition');
+  const productModalContent = document.getElementById('productModalContent');
+
+  function closeProductModal() {
+    productModal.hidden = true;
+    document.body.classList.remove('modal-open');
+  }
+
+  function openProductModal(card) {
+    const image = card.querySelector('img');
+    productModalTitle.textContent = card.querySelector('h3').textContent;
+    productModalCategory.textContent = card.querySelector('.chip').textContent;
+    productModalImage.src = image.src;
+    productModalImage.alt = image.alt;
+    productModalPrice.textContent = card.querySelector('span.shrink-0').textContent;
+    productModalComposition.textContent = card.querySelector('.text-slate-500').textContent;
+    productModalContent.innerHTML = card.querySelector('.med-desc').innerHTML;
+    productModal.hidden = false;
+    document.body.classList.add('modal-open');
+  }
+
+  document.querySelectorAll('.med-card').forEach(card => {
+    card.addEventListener('click', () => openProductModal(card));
+  });
+
+  productModal.addEventListener('click', (event) => {
+    if (event.target.closest('[data-modal-close]')) closeProductModal();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !productModal.hidden) closeProductModal();
   });
 </script>
 
