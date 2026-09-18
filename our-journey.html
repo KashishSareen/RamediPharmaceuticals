@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Journey | Ramedi Pharma</title>
+<meta name="description" content="Discover the journey, milestones and future vision of Ramedi Pharmaceuticals Pvt. Ltd.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 900:'#052A44', 800:'#073856', 700:'#0A4A6E' },
+          brand: { 50:'#EDFAFF', 100:'#D7F2FC', 200:'#AEE6F7', 300:'#78D4EE', 400:'#3FBBE0', 500:'#159FD6', 600:'#0C82B4', 700:'#0A6690', 800:'#0B4E70', 900:'#0B3A55' }
+        },
+        fontFamily: { display: ['Fraunces', 'serif'], body: ['Manrope', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior:smooth; }
+  body { font-family:'Manrope', sans-serif; background:#FBFEFF; color:#0B2436; overflow-x:hidden; }
+  h1,h2,h3,h4,.font-display { font-family:'Fraunces', serif; }
+  .hero-bg { background:radial-gradient(110% 130% at 50% 0%, #0A4A6E 0%, #073856 50%, #052A44 100%); }
+  .grad-btn { background-image:linear-gradient(135deg,#3FBBE0 0%,#0C82B4 50%,#0A4A6E 100%); transition:all .3s ease; box-shadow:0 10px 25px -8px rgba(10,74,110,.55); }
+  .grad-btn:hover { box-shadow:0 14px 30px -6px rgba(10,74,110,.65); transform:translateY(-1px); }
+  .grad-btn-outline { background:transparent; border:1.5px solid rgba(255,255,255,.55); }
+  .card-grad { background-image:linear-gradient(160deg,#FFFFFF 0%,#F1FBFF 55%,#E4F6FD 100%); border:1px solid #DDF1FA; }
+  .chip { background-image:linear-gradient(135deg,#EDFAFF,#D7F2FC); border:1px solid #BFE8F8; }
+  .section-eyebrow-dot { width:6px; height:6px; border-radius:999px; background:linear-gradient(135deg,#3FBBE0,#0A4A6E); }
+  #mobileMenu { transition:max-height .35s ease, opacity .3s ease; }
+  .navlink { position:relative; }
+  .navlink::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:linear-gradient(90deg,#3FBBE0,#0A4A6E); transition:width .25s ease; }
+  .navlink:hover::after { width:100%; }
+  .timeline-line { background:linear-gradient(180deg,#3FBBE0 0%,#0A4A6E 72%,#78D4EE 100%); }
+  .timeline-dot { box-shadow:0 0 0 7px #EDFAFF, 0 0 0 8px #AEE6F7; }
+</style>
+</head>
+<body class="antialiased">
+<header id="siteHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur border-b border-brand-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="flex items-center justify-between h-16 sm:h-[72px]">
+      <a href="#home" class="flex items-center gap-2 shrink-0">
+        <img src="images/pharma_logo.jpg" alt="Ramedi Pharma logo" class="h-12 sm:h-14 w-auto max-w-[220px] rounded-[10px]  object-contain mix-blend-multiply">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-navy-900">
+        <a href="/index.html" class="navlink">Home</a>
+        <a href="/index.html#about" class="navlink">About</a>
+        
+        <a href="/index.html#values" class="navlink">Values</a>
+        <a href="/index.html#products" class="navlink">Products</a>
+        <a href="/index.html#focus" class="navlink">Therapeutic Focus</a>
+        <a href="/index.html#network" class="navlink">Distributor Network</a>
+        <a href="/index.html#contact" class="navlink">Contact</a>
+      </nav>
+
+      <a href="tel:+918080788291" class="hidden lg:inline-flex grad-btn text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 items-center gap-2">
+        Get In Touch
+      </a>
+
+      <button id="menuBtn" aria-label="Toggle menu" class="lg:hidden relative w-9 h-9 flex flex-col items-center justify-center gap-[5px]">
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-[2px] bg-navy-900 transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden opacity-0">
+      <div class="flex flex-col gap-1 pb-5 pt-1 text-navy-900 font-semibold text-[15px]">
+        <a href="/index.html" class="mobile-link py-2.5 border-b border-brand-100">Home</a>
+        <a href="/index.html#about" class="mobile-link py-2.5 border-b border-brand-100">About</a>
+      
+        <a href="/index.html#values" class="mobile-link py-2.5 border-b border-brand-100">Values</a>
+        <a href="/index.html#products" class="mobile-link py-2.5 border-b border-brand-100">Products</a>
+        <a href="/index.html#focus" class="mobile-link py-2.5 border-b border-brand-100">Therapeutic Focus</a>
+        <a href="/index.html#network" class="mobile-link py-2.5 border-b border-brand-100">Distributor Network</a>
+        <a href="/index.html#contact" class="mobile-link py-2.5 border-b border-brand-100">Contact</a>
+        <a href="tel:+918080788291" class="grad-btn text-white text-center text-sm font-bold px-5 py-3 rounded-full mt-4">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero-bg relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-40 lg:px-10">
+    <div class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-400/20 blur-3xl"></div>
+    <div class="relative mx-auto max-w-4xl text-center" data-aos="fade-up">
+      <div class="chip mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5"><span class="section-eyebrow-dot"></span><span class="text-xs font-bold uppercase tracking-wide text-brand-800 sm:text-sm">Our Story</span></div>
+      <h1 class="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">Our Journey</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">From one vision in 2023 to a growing healthcare company, every milestone is built on quality, trust and growth.</p>
+    </div>
+  </section>
+
+  <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-14 max-w-2xl" data-aos="fade-up"><p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-brand-700">Built with purpose</p><h2 class="font-display text-3xl font-semibold text-navy-900 sm:text-4xl">A story of steady progress</h2><p class="mt-4 leading-relaxed text-slate-600">Our journey is shaped by a clear belief: better healthcare begins with responsible partnerships and products people can trust.</p></div>
+      <div class="relative">
+        <div class="timeline-line absolute bottom-4 left-[17px] top-4 w-1 rounded-full sm:left-1/2 sm:-translate-x-1/2"></div>
+        <div class="space-y-12 sm:space-y-16">
+          <article class="relative grid gap-6 pl-12 sm:grid-cols-2 sm:gap-12 sm:pl-0" data-aos="fade-up"><div class="timeline-dot absolute left-[10px] top-2 h-4 w-4 rounded-full bg-brand-500 sm:left-1/2 sm:-translate-x-1/2"></div><div class="sm:pr-12 sm:text-right"><p class="font-display text-4xl font-semibold text-brand-700">2023</p><p class="mt-1 text-sm font-bold uppercase tracking-widest text-navy-800">The Beginning</p></div><div class="card-grad rounded-2xl p-6 sm:col-start-2 sm:row-start-1 sm:p-8"><h3 class="font-display text-2xl font-semibold text-navy-900">A clear vision for better healthcare</h3><p class="mt-4 leading-relaxed text-slate-600">Ramedi Pharmaceuticals Pvt. Ltd. was established in 2023 with a clear vision - to build a trusted Indian pharmaceutical company focused on quality, innovation and better healthcare.</p><p class="mt-4 font-display text-lg italic text-navy-800">&ldquo;India Comes for Trust.&rdquo;</p><p class="mt-4 leading-relaxed text-slate-600">We started with a focused portfolio and a commitment to building long-term relationships with doctors, healthcare professionals and patients.</p></div></article>
+          <article class="relative grid gap-6 pl-12 sm:grid-cols-2 sm:gap-12 sm:pl-0" data-aos="fade-up"><div class="timeline-dot absolute left-[10px] top-2 h-4 w-4 rounded-full bg-brand-500 sm:left-1/2 sm:-translate-x-1/2"></div><div class="card-grad rounded-2xl p-6 sm:col-start-1 sm:row-start-1 sm:p-8"><h3 class="font-display text-2xl font-semibold text-navy-900">From an idea to a growing business</h3><p class="mt-4 leading-relaxed text-slate-600">We strengthened our product portfolio, established our presence in the market and began building a network of healthcare professionals.</p><p class="mt-4 font-semibold text-navy-800">Our focus remained on:</p><ul class="mt-3 space-y-2 text-slate-600"><li>Quality pharmaceutical products</li><li>Strong doctor relationships</li><li>Ethical marketing</li><li>Reliable service</li><li>Long-term brand building</li></ul><p class="mt-4 leading-relaxed text-slate-600">2024 was the year of foundation and learning.</p></div><div class="sm:pl-12"><p class="font-display text-4xl font-semibold text-brand-700">2024</p><p class="mt-1 text-sm font-bold uppercase tracking-widest text-navy-800">Building the Foundation</p></div></article>
+          <article class="relative grid gap-6 pl-12 sm:grid-cols-2 sm:gap-12 sm:pl-0" data-aos="fade-up"><div class="timeline-dot absolute left-[10px] top-2 h-4 w-4 rounded-full bg-brand-500 sm:left-1/2 sm:-translate-x-1/2"></div><div class="sm:pr-12 sm:text-right"><p class="font-display text-4xl font-semibold text-brand-700">2025</p><p class="mt-1 text-sm font-bold uppercase tracking-widest text-navy-800">Expanding Our Presence</p></div><div class="card-grad rounded-2xl p-6 sm:col-start-2 sm:row-start-1 sm:p-8"><h3 class="font-display text-2xl font-semibold text-navy-900">From foundation to expansion</h3><p class="mt-4 leading-relaxed text-slate-600">Ramedi Pharmaceuticals continued to expand its product portfolio and market presence.</p><p class="mt-4 leading-relaxed text-slate-600">We strengthened our presence across key therapeutic segments and focused on creating brands that address genuine healthcare needs.</p><p class="mt-4 leading-relaxed text-slate-600">2025 marked an important step forward in our journey - growing our reach while strengthening the trust we had built.</p></div></article>
+          <article class="relative grid gap-6 pl-12 sm:grid-cols-2 sm:gap-12 sm:pl-0" data-aos="fade-up"><div class="timeline-dot absolute left-[10px] top-2 h-4 w-4 rounded-full bg-brand-500 sm:left-1/2 sm:-translate-x-1/2"></div><div class="card-grad rounded-2xl p-6 sm:col-start-1 sm:row-start-1 sm:p-8"><h3 class="font-display text-2xl font-semibold text-navy-900">A stronger team. A wider portfolio. A bigger vision.</h3><p class="mt-4 leading-relaxed text-slate-600">With an expanding field force and growing presence across Mumbai and Maharashtra, Ramedi Pharmaceuticals entered a new phase of growth.</p><p class="mt-4 font-semibold text-navy-800">Our focus is now on:</p><ul class="mt-3 space-y-2 text-slate-600"><li>Expanding our doctor network</li><li>Strengthening our sales team</li><li>Building powerful pharmaceutical brands</li><li>Expanding into new markets</li><li>Developing consumer healthcare opportunities</li></ul><p class="mt-4 leading-relaxed text-slate-600">We are building Ramedi for the long term - with trust at the centre of everything we do.</p></div><div class="sm:pl-12"><p class="font-display text-4xl font-semibold text-brand-700">2026</p><p class="mt-1 text-sm font-bold uppercase tracking-widest text-navy-800">Accelerating Growth</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-bg relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-10"><div class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-brand-400/15 blur-3xl"></div><div class="relative mx-auto max-w-4xl text-center" data-aos="zoom-in"><p class="mb-4 text-xs font-bold uppercase tracking-[.2em] text-brand-300">The Road Ahead</p><h2 class="font-display text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">2030 - Building a Pan-India Healthcare Company</h2><p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">Our vision is to grow from a regional pharmaceutical company into a trusted Pan-India healthcare organization.</p><p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75">We aim to build a strong portfolio across prescription medicines, consumer healthcare and emerging healthcare segments while continuing to uphold the principles on which Ramedi was founded.</p><div class="mt-9 inline-flex flex-col items-center gap-1 rounded-2xl border border-white/20 bg-white/10 px-7 py-5"><p class="font-display text-2xl font-semibold text-white">RAMEDI PHARMACEUTICALS</p><p class="text-sm font-bold tracking-widest text-brand-200">QUALITY. TRUST. GROWTH.</p><p class="mt-2 font-display text-lg italic text-brand-300">India Comes for Trust.</p></div></div></section>
+</main>
+
+<footer class="bg-navy-900 pt-16 sm:pt-20 pb-8 px-4 sm:px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div class="lg:col-span-1">
+        <!-- Reduced container padding and image height/width -->
+        <div class="inline-flex bg-white rounded-md p-1.5 mb-4">
+          <img src="images/pharma_logo.jpg" alt="Ramedi Pharma" class="h-9 sm:h-11 w-auto max-w-[160px] object-contain">
+        </div>
+        <p class="text-white/55 text-sm leading-relaxed">Built on Trust. Driven by Science. Inspired by Better Health.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="/index.html#about" class="hover:text-brand-300 transition-colors">About Us</a></li>
+          <li><a href="/index.html#values" class="hover:text-brand-300 transition-colors">Our Values</a></li>
+          <li><a href="/index.html#products" class="hover:text-brand-300 transition-colors">Products</a></li>
+          <li><a href="/index.html#network" class="hover:text-brand-300 transition-colors">Distributor Network</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Therapeutic Areas</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li>Neurology &amp; Neurosurgery</li>
+          <li>Psychiatry</li>
+          <li>Orthopaedics &amp; Spine</li>
+          <li>Gastroenterology</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-semibold mb-4">Get in Touch</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li>Shop No. 3, Abhay Apartment CHS Ltd., Narayan Nagar Road, Bhayander West, Thane – 401101</li>
+          <li><a href="tel:+918080788291" class="hover:text-brand-300 transition-colors font-semibold text-white">+91 80807 88291</a></li>
+          <!-- <li>GST: 27AAMCR8842G1ZV</li> -->
+        </ul>
+        
+        <!-- Social Media Icons -->
+        <div class="flex items-center gap-4 mt-5">
+          <a href="https://www.facebook.com/people/Ramedi-Pharmaceuticals-Pvt-Ltd/61594016475431/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/60 hover:text-brand-300 transition-colors">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ramedi_pharma/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/60 hover:text-brand-300 transition-colors">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-white/40 text-xs sm:text-sm text-center sm:text-left">© 2026 Ramedi Pharmaceuticals Pvt. Ltd. All rights reserved.</p>
+      <p class="text-white/40 text-xs sm:text-sm">Prescription products for use only under medical supervision.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918080788291?text=Enquiry%20from%20website" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ramedi Pharma on WhatsApp" title="Chat with Ramedi Pharma on WhatsApp" class="whatsapp-float fixed bottom-[88px] sm:bottom-16 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center transition-transform duration-300">
+  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.86 11.86 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.47-8.43Zm-8.44 18.27h-.01a9.85 9.85 0 0 1-5.02-1.37l-.36-.21-3.73.98 1-3.64-.24-.37a9.84 9.84 0 0 1-1.51-5.24C2.21 6.47 6.64 2.04 12.08 2.04c2.64 0 5.12 1.03 6.98 2.9a9.83 9.83 0 0 1 2.89 7c0 5.44-4.43 9.87-9.87 9.87Zm5.41-7.4c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45s1.05 2.84 1.2 3.04c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+  </svg>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration:700, once:true, offset:60, easing:'ease-out-cubic' });
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  let menuOpen = false;
+  function closeMenu() { menuOpen = false; mobileMenu.style.maxHeight = '0px'; mobileMenu.style.opacity = '0'; bar1.style.transform = 'none'; bar2.style.opacity = '1'; bar3.style.transform = 'none'; }
+  menuBtn.addEventListener('click', () => { menuOpen = !menuOpen; mobileMenu.style.maxHeight = menuOpen ? mobileMenu.scrollHeight + 'px' : '0px'; mobileMenu.style.opacity = menuOpen ? '1' : '0'; bar1.style.transform = menuOpen ? 'translateY(7px) rotate(45deg)' : 'none'; bar2.style.opacity = menuOpen ? '0' : '1'; bar3.style.transform = menuOpen ? 'translateY(-7px) rotate(-45deg)' : 'none'; });
+  document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+  window.addEventListener('scroll', () => {
+    if (menuOpen) closeMenu();
+  }, { passive: true });
+</script>
+</body>
+</html>
