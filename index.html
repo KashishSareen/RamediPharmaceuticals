@@ -6,13 +6,13 @@
 <title>Ramedi Pharma | Built on Trust. Driven by Science.</title>
 <meta name="description" content="Ramedi Pharmaceuticals Pvt. Ltd. — Neurology, Psychiatry & specialty healthcare products. Trusted by chemists, stockists and healthcare professionals across India.">
 </head>
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script>
-  tailwind.config = {
+  window.tailwind = window.tailwind || {};
+  window.tailwind.config = {
     theme: {
       extend: {
         colors: {
@@ -28,6 +28,7 @@
     }
   }
 </script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
   html { scroll-behavior: smooth; }

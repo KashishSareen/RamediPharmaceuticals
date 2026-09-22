@@ -7,8 +7,6 @@
 <meta name="description" content="Meet the leadership team behind Ramedi Pharmaceuticals Pvt. Ltd.">
 </head>
 <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-
 <!-- AOS Animations -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
@@ -18,7 +16,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script>
-  tailwind.config = {
+  window.tailwind = window.tailwind || {};
+  window.tailwind.config = {
     theme: {
       extend: {
         colors: {
@@ -37,6 +36,7 @@
     }
   }
 </script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
   html { scroll-behavior: smooth; }
